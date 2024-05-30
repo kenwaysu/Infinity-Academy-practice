@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS</title>
+        <link rel="stylesheet" href="web.css">
+    </head>
+    <body>
+        <p>請選擇 剪刀 石頭 布</p>
+        <button onclick="
+                runGame(1) 
+        ">剪刀</button>
+        <button onclick="
+                runGame(2)
+        ">石頭</button>
+        <button onclick="
+                runGame(3)
+        ">布</button>
+        <button id="subscripe">訂閱</button>
+        
+        <div>
+            <button class="button-1" onclick="
+                showCart();
+                ">購物車清單</button>
+            <button class="button-1" onclick="
+                resetCart();
+                alert('已清空購物車')
+            ">清除購物車</button>
+        </div>
+
+        <p></p>
+        <div class="product">
+            <img src="product1.jpg">
+            <div class="product-1">
+                <p>100元</p>
+                <button onclick="
+                cart.product.product_1 ++;//加了再存放
+                cart.product.totalPrice +=100;
+                // console.log(cart.product.product_1); 
+                cartStorage();
+                showCart();  
+                // console.log(localStorage.getItem('cart'));
+                ">加入購物車</button>
+            </div>
+
+            <img src="product2.jpg">
+            <div class="product-2">
+                <p>200元</p>
+                <button onclick="
+                cart.product.product_2 ++;//加了再存放
+                cart.product.totalPrice +=200;
+                cartStorage();
+                showCart();
+                ">加入購物車</button>
+            </div>
+
+            <img src="product3.jpg">
+            <div class="product-3">
+                <p>800元</p>
+                <button onclick="
+                cart.product.product_3 ++;//加了再存放
+                cart.product.totalPrice +=800;
+                cartStorage();
+                showCart();
+                ">加入購物車</button>
+            </div>
+        </div>
+
+        <script src="web.js"></script>
+        <!-- <script src="note.js"></script> -->
+    </body>
+</html>
