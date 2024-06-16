@@ -17,7 +17,7 @@
         <button onclick="
                 runGame(3)
         ">布</button>
-        <button id="subscripe">訂閱</button>
+        <button id="subscripe" >訂閱</button>
         
         <div>
             <button class="button-1" onclick="
@@ -28,7 +28,15 @@
                 alert('已清空購物車')
             ">清除購物車</button>
         </div>
-
+        <p></p>
+        <input type="text" class="product-input" placeholder="type your product">
+        <button onclick="
+            // console.log(document.querySelector('.product-input')) //預設是字串
+            addList()
+        ">加入</button>
+        <div id="add-list">
+            
+        </div>
         <p></p>
         <div class="product">
             <img src="product1.jpg">
@@ -71,7 +79,7 @@
         <p id="product-3">product 3 : </p>
         <p id="totalPrice">totalPrice : </p>
 
-        <script src="web.js"></script>
-        <!-- <script src="note.js"></script> -->
+        <!-- <script src="web.js"></script> -->
+        <script src="note.js"></script>
     </body>
 </html>

@@ -78,10 +78,25 @@ function resetCart(){
     let jsonCart = JSON.stringify(cart)
     localStorage.setItem("cart",jsonCart)
 }
+listArray = []
+function addList(){
+    listArray.push(`<p>${document.querySelector('.product-input').value}</p>`)
+    const addList = document.querySelector('#add-list')
+    let listString = ''
+    for (let i = 0; i<listArray.length; i++){
+        listString = listString + listArray[i]
+    }
+    addList.innerHTML = listString
+}
 
 // function subscripe(){
 //     const subscripeButton = document.querySelector('#subscripe')
-//     subscripeButton.innerHTML = "已訂閱"
+//         if(subscripeButton.innerHTML === "訂閱"){
+//             subscripeButton.innerHTML = "已訂閱"
+//         }
+//         else{
+//             subscripeButton.innerHTML = "訂閱"
+//         }
 // }
 const totalPrice = document.querySelector("#totalPrice")
 totalPrice.innerHTML = `totalPrice : ${cart.product.totalPrice  }`
