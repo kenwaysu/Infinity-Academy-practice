@@ -3,12 +3,12 @@ let P=0;
 let name = `模板字串`
 let stradd = `模板字串可以直接相加${P}不須再用+字號\n換行`
 console.log(stradd)
-// 判斷是否為相等要寫===
+// 部會自動轉換type寫三個===，兩個==會自動轉換
 // 是否不相等!=
 console.log(5 === 6)//顯示false
-// 且$$ 或|| 非!
+// 且&& 或|| 非!
 console.log(true && true) //會顯示true
-console.log(true || false) //會縣市true
+console.log(true || false) //會顯市true
 console.log(!true)//會顯示false
 
 // 本地儲存資料

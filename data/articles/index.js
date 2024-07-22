@@ -7,9 +7,6 @@ for (let i = 0; i<20; i++){
         subTitle: faker.lorem.sentences(),
         date: faker.date.past().toString(),
         content: faker.lorem.paragraph(),
-        publish: [true, false][
-            Math.floor(Math.random()*[true, false].length)
-        ],
         url: `/articles/${i}`,
     })
 }

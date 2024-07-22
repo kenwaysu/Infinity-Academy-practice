@@ -71,7 +71,7 @@ app.get("/txt", (req, res) => {
     })
 })
 
-app.use("/", require("./routes"))
+app.use("/", require("./routesapp"))
 
 app.listen(3000, ()=>{
     console.log("express app listen on port 3000")
