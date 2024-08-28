@@ -43,6 +43,29 @@ console.log(array)
 array.splice(2, 2) //從陣列的第3比開始移除掉2筆資料
 console.log(array)
 
+//include 
+let number = [1, 2, 3, 4, 5];
+console.log(numbers.includes(4, 3)); // (從第4個開始查找，找到的值是 4)true
+
+let str = "apple,banana,mango";
+
+// str轉array
+let arr1 = str.split(",");
+console.log(arr1); // ["apple", "banana", "mango"]
+
+// 以空格分隔
+let str2 = "The quick brown fox";
+let arr2 = str2.split(" ");
+console.log(arr2); // ["The", "quick", "brown", "fox"]
+
+// 不使用分隔符，將每個字符作為單獨的元素
+let str3 = "hello";
+let arr3 = str3.split("");
+console.log(arr3); // ["h", "e", "l", "l", "o"]
+
+str.form()//["h", "e", "l", "l", "o"]
+const strArr = [...str]//["h", "e", "l", "l", "o"]
+
 // while
 let i = 1
 let sum =0
@@ -56,6 +79,23 @@ console.log(sum)
 for(let i=0; i<5; i++){
     console.log(i)
 }
+// set
+let numbers = [1, 2, 3]
+let setUse = new Set(numbers)
+setUse.add(4)
+setUse.delete(3)
+console.log([...setUse])
+for(let value of setUse){
+    console.log(value)
+}
+setUse.forEach(value=>{
+    console.log(value)
+})
+
+let num = [1, 2, 3, 4, 5, 6]
+num.forEach( value => {
+    console.log(value)
+})
 
 // AJAX
 let value = true
@@ -113,28 +153,3 @@ async function getDelayGroup(){
 }
 getDelayGroup()
 
-const axios = require('axios')
-async function getBinanceData(){
-    try {
-        let binance = await axios('https://api.binance.com/api/v3/ticker/price')
-        let pairs = await binance.data.map(item => item.symbol)
-        let usdtPairs = pairs.filter(item => item.includes('USDT'))
-        console.log(usdtPairs.length)
-
-    } catch (error) {
-        console.error('Error fetching data:', error)
-    }
-}
-getBinanceData()
-
-async function getBybitData(){
-    try {
-        const bybit = await axios('https://api.bybit.com/spot/v3/public/symbols')
-        const pairs = await bybit.data.result.list.map(item => item.name)
-        const usdtPairs = pairs.filter(coin => coin.includes('USDT') )
-        console.log(usdtPairs.length)
-    } catch (error) {
-        console.error('Error fetching data:', error)
-    }
-}
-getBybitData()

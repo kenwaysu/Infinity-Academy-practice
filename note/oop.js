@@ -50,7 +50,7 @@ class Cat2 {
     }
 }
 
-const showObjectLevel = new Cat2('喵喵', '黑色')
+const showObjectLevel = new Cat2()
 showObjectLevel.playtogether(cat)
 Cat2.calculate(1,2,3)
 
@@ -59,7 +59,17 @@ class Stock{
     constructor(){
         this.kline = {
             open: (meg) =>{
-                console.log(`${meg}`)
+                // console.log(`${meg}`)
+                let userinput = null
+                if(typeof meg === 'number'){
+                    userinput = meg
+                }
+                else if(typeof meg === 'string'){
+                    userinput = 'string'
+                }else{
+                    userinput = 'not a number or string'
+                }
+                console.log(`${userinput}`)
             },
             high: (meg) =>{
                 console.log(`${meg}`)
@@ -67,16 +77,17 @@ class Stock{
         }
     }
     open(num){
-        let userinput = null
-        if(typeof num === 'number'){
-            userinput = num
-        }
-        else if(typeof num === 'string'){
-            userinput = 'string'
-        }else{
-            userinput = 'not a number or string'
-        }
-        this.kline.open(userinput)
+        // let userinput = null
+        // if(typeof num === 'number'){
+        //     userinput = num
+        // }
+        // else if(typeof num === 'string'){
+        //     userinput = 'string'
+        // }else{
+        //     userinput = 'not a number or string'
+        // }
+        // this.kline.open(userinput)
+        this.kline.open(num)
     }
     
 }
@@ -112,11 +123,11 @@ class Parent{
 }
 
 class Child extends Parent{
-    constructor(name, age, asset){
-        super(name, age)
-        this.asset = asset
-    }
+    // constructor(name, age, asset){
+    //     super(name, age)
+    //     this.asset = asset
+    // }
 }
 
 const child = new Child('小孩', 10 ,100)
-console.log(child.asset)
+console.log(child.name,child.age)
